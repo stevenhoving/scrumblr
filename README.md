@@ -46,6 +46,26 @@ my goal was to avoid buttons and ui (almost everything is edit in place or dragg
 ## Dependencies
 1. [Install Docker Desktop](https://www.docker.com/products/docker-desktop)
 
+## Start a redis container
+See [https://hub.docker.com/_/redis/]
+
+The `-p` command exposes the port (externalPort:internalPort)
+```
+$ docker run --name some-redis -p 6379:6379 -d redis
+```
+
+## Start the node server locally
+This requires node.js (version 10+) to be installed on the development machine.
+```
+$ npm build
+$ npm start
+```
+
+## Building the node docker image
+```
+$ docker build -t gabema/scrumblr-app -f .docker\app.dockerfile .
+```
+
 # license
 
 scrumblr is free software: you can redistribute it and/or modify
@@ -68,3 +88,4 @@ author
 ------
 
 ali asaria
+gabe martin

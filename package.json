@@ -1,7 +1,7 @@
 {
   "name": "scrumblr",
   "description": "Web-based simulation of a physical agile sprint board that supports real-time collaboration.",
-  "version": "0.3.0",
+  "version": "1.0.3",
   "license": "GPL-3.0",
   "repository": {
     "url": "https://github.com/gabema/scrumblr"
@@ -17,7 +17,7 @@
     "lib": "lib/"
   },
   "engines": {
-    "node": "^10.19.0"
+    "node": "10.19.0"
   },
   "dependencies": {
     "async": "~0.9.0",
