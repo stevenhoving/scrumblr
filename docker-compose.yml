@@ -1,0 +1,53 @@
+version: '3.7'
+# https://docs.docker.com/engine/reference/builder/
+# https://docs.docker.com/compose/compose-file/
+
+
+# https://hub.docker.com/r/timmit/scrumblr
+# https://github.com/aliasaria/scrumblr
+
+
+# Pull the following build
+# docker pull timmit/scrumblr
+
+# To run manually
+# Start Redis
+# docker run -d --name redis-data -v /redis-data:/data redis:5.0.8-alpine redis-server --appendonly yes
+# docker run -d --name redis-scrumblr --volumes-from redis-data redis:5.0.8-alpine
+
+# docker build -t gabema/scrumblr-app -f .docker\app.dockerfile .
+# docker run -it --rm --name scrumblr --link redis-scrumblr:redis -p 8080:8080 gabema/scrumblr-app
+
+# docker-compose build
+# docker-compose up
+# docker-compose down
+
+services:
+    webscrumblr:
+        build:
+            context: .
+            dockerfile: .docker/app.dockerfile
+        ports:
+            - "8080:8080"
+        networks:
+            - scrumblr-net
+
+    redisdata:
+        image: redis:5.0.8-alpine
+        volumes:
+            - "redis-data:/data"
+        command: ["redis-server", "--appendonly", "yes"]
+
+    redis:
+        image: redis:5.0.8-alpine
+        volumes:
+            - "redis-data:/data"
+        networks:
+            - scrumblr-net
+
+networks:
+    scrumblr-net:
+        driver: bridge
+
+volumes:
+    redis-data:
