@@ -6,7 +6,7 @@ scrumblr is a web-based simulation of a physical agile kanban board that support
 
 you can play with a demo here:
 
-- [scrumblr.ca/demo](https://scrumblr.ca/demo)
+- [scrumblr.ersapps.com/demo](https://scrumblr.ersapps.com/demo)
 
 And view a video here:
 
@@ -14,7 +14,7 @@ And view a video here:
 
 # use scrumblr
 
-if you'd like to use scrumblr go to [scrumblr.ca](https://scrumblr.ca). new boards are made simply by modifying the url to something unique. e.g. your team could use a shared board at: *https://scrumblr.ca/thisisoursecretboard23423242*
+if you'd like to use scrumblr go to [scrumblr.ersapps.com](https://scrumblr.ersapps.com). new boards are made simply by modifying the url to something unique. e.g. your team could use a shared board at: *https://scrumblr.ersapps.com/thisisoursecretboard23423242*
 
 alternatively, you can follow the instructions below to setup scrumblr yourself. it is very simple -- it just uses redis and node.js.
 
@@ -29,7 +29,6 @@ my goal was to avoid buttons and ui (almost everything is edit in place or dragg
 
 ![Wellca Board](client/images/DSC_7093.jpg)
 
-
 # how to install and run on your own computer (linux/osx)
 
 - [install redis](http://redis.io/download) (last tested on v2.8.4)
@@ -41,10 +40,17 @@ my goal was to avoid buttons and ui (almost everything is edit in place or dragg
 - run scrumblr `node server.js --port 80` where "80" is the port you have opened in your firewall and want scrumblr to run on.
 - open a browser to `http://<server>:<port>` where `<server>` is your server's url or IP address, and `<port>` is the port you chose in the previous step.
 
-# how to development and run using docker
+# how to install and run on your own computer using docker client
 
-## Dependencies
-1. [Install Docker Desktop](https://www.docker.com/products/docker-desktop)
+## Using docker compose
+- [install docker desktop](https://docs.docker.com/get-docker/) (last tested on v2.2.0.4, engine v19.03.8, compose v1.25.4)
+- run `docker-compose build`
+- run `docker-compose up`
+- open a browser to `http://<server>:<port>` where `<server>` is your server's url or IP address, and `<port>` is the port you chose in the previous step.
+
+## Using redis container and local code
+- [install docker desktop](https://docs.docker.com/get-docker/) (last tested on v2.2.0.4, engine v19.03.8, compose v1.25.4)
+
 
 ## Start a redis container
 See [https://hub.docker.com/_/redis/]
@@ -52,13 +58,6 @@ See [https://hub.docker.com/_/redis/]
 The `-p` command exposes the port (externalPort:internalPort)
 ```
 $ docker run --name some-redis -p 6379:6379 -d redis
-```
-
-## Start the node server locally
-This requires node.js (version 10+) to be installed on the development machine.
-```
-$ npm build
-$ npm start
 ```
 
 ## Building the node docker image

@@ -24,9 +24,7 @@ version: '3.7'
 
 services:
     webscrumblr:
-        build:
-            context: .
-            dockerfile: .docker/app.dockerfile
+        image: gabema/scrumblr:v1.0.3
         ports:
             - "8080:8080"
         networks:
