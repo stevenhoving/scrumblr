@@ -8,7 +8,6 @@ var sanitizer = require('sanitizer');
 var compression = require('compression');
 var express = require('express');
 var conf = require('./config.js').server;
-var ga = require('./config.js').googleanalytics;
 
 /**************
  LOCAL INCLUDES
@@ -30,9 +29,6 @@ var router = express.Router();
 
 app.use(compression());
 app.use(conf.baseurl, router);
-
-app.locals.ga = ga.enabled;
-app.locals.gaAccount = ga.account;
 
 router.use(express.static(__dirname + '/client'));
 
