@@ -7,17 +7,12 @@
 */
 
 var argv = require('yargs').usage(
-    'Usage: $0 [--port INTEGER [8080]] [--baseurl STRING ["/"]] [--redis SCHEME://STRING:INT [redis://127.0.0.1:6379]] [--gaEnabled] [--gaAccount STRING [UA-2069672-4]]'
+    'Usage: $0 [--port INTEGER [8080]] [--baseurl STRING ["/"]] [--redis SCHEME://STRING:INT [redis://127.0.0.1:6379]]'
 ).argv;
 
 exports.server = {
     port: argv.port || 8080,
     baseurl: argv.baseurl || '/'
-};
-
-exports.googleanalytics = {
-    enabled: argv['gaEnabled'] || false,
-    account: argv['gaAccount'] || 'UA-2069672-4'
 };
 
 exports.database = {
