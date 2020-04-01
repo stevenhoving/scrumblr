@@ -167,7 +167,7 @@ function drawNewCard(id, text, x, y, rot, colour, sticker, animationspeed) {
         ' draggable" style="-webkit-transform:rotate(' + rot +
         'deg);\
     ">\
-    <img src="images/icons/token/Xion.png" class="card-icon delete-card-icon" />\
+    <img src="images/icons/token/Xion.svg" class="card-icon delete-card-icon" />\
     <img class="card-image" src="images/' +
         colour + '-card.png">\
     <div id="content:' + id +
