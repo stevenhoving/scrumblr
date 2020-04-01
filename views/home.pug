@@ -12,9 +12,6 @@ html(lang="en")
 body
 	div.board-outline
 		div#board
-			div#board-doodles
-
-
 			table#board-table.board-table
 				tr
 					td
@@ -46,11 +43,8 @@ body
 		div.sticker#sticker-silverstar
 		div.sticker#sticker-redstar
 
-
 	//display # of active users here
 	div.active-connections= "connections: " + connected
-
-	//<div style="width: 980px; height: 450px; border: solid 2px; opacity:.1; margin-top: 100px"> this will be the backlog that only appears on drag or perhaps not at all</div>
 
 	<script type="text/javascript">function go() {var value = document.forms[0].elements["name"].value; value = escape(value); window.location.href = value; return false;}</script>
 
