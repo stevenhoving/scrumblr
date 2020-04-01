@@ -168,17 +168,17 @@ function drawNewCard(id, text, x, y, rot, colour, sticker, animationspeed) {
         ' draggable" style="-webkit-transform:rotate(' +
         rot +
         'deg);\
-	">\
-	<img src="images/icons/token/Xion.png" class="card-icon delete-card-icon" />\
-	<img class="card-image" src="images/' +
+    ">\
+    <img src="images/icons/token/Xion.svg" class="card-icon delete-card-icon" />\
+    <img class="card-image" src="images/' +
         colour +
         '-card.png">\
-	<div id="content:' +
+    <div id="content:' +
         id +
         '" class="content stickertarget droppable">' +
         text +
         '</div><span class="filler"></span>\
-	</div>';
+    </div>';
 
     var card = $(h);
     card.appendTo('#board');
@@ -706,10 +706,10 @@ $(function() {
             changeThemeTo('bigcards');
         }
         /*else if (currentTheme == "nocards")
-		{
-			currentTheme = "bigcards";
-			$("link[title=cardsize]").attr("href", "css/bigcards.css");
-		}*/
+        {
+            currentTheme = "bigcards";
+            $("link[title=cardsize]").attr("href", "css/bigcards.css");
+        }*/
 
         sendAction('changeTheme', currentTheme);
 
