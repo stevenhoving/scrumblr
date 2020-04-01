@@ -172,7 +172,7 @@ function drawNewCard(id, text, x, y, rot, colour, sticker, animationspeed) {
     <img src="images/icons/token/Xion.svg" class="card-icon delete-card-icon" />\
     <img class="card-image" src="images/' +
         colour +
-        '-card.png">\
+        '-card.webp">\
     <div id="content:' +
         id +
         '" class="content stickertarget droppable">' +
