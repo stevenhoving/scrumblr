@@ -166,14 +166,14 @@ function drawNewCard(id, text, x, y, rot, colour, sticker, animationspeed) {
     var h = '<div id="' + id + '" class="card ' + colour +
         ' draggable" style="-webkit-transform:rotate(' + rot +
         'deg);\
-	">\
-	<img src="images/icons/token/Xion.png" class="card-icon delete-card-icon" />\
-	<img class="card-image" src="images/' +
+    ">\
+    <img src="images/icons/token/Xion.png" class="card-icon delete-card-icon" />\
+    <img class="card-image" src="images/' +
         colour + '-card.png">\
-	<div id="content:' + id +
+    <div id="content:' + id +
         '" class="content stickertarget droppable">' +
         text + '</div><span class="filler"></span>\
-	</div>';
+    </div>';
 
     var card = $(h);
     card.appendTo('#board');
@@ -186,7 +186,7 @@ function drawNewCard(id, text, x, y, rot, colour, sticker, animationspeed) {
     //The following doesn't work so we will do the bug
     //fix recommended in the above bug report
     // card.click( function() {
-    // 	$(this).focus();
+    //     $(this).focus();
     // } );
 
     card.draggable({
@@ -203,7 +203,7 @@ function drawNewCard(id, text, x, y, rot, colour, sticker, animationspeed) {
                 return false;
             }
         },
-		handle: "div.content"
+        handle: "div.content"
     });
 
     //After a drag:
@@ -682,8 +682,8 @@ function adjustCard(offsets, doSync) {
 $(function() {
 
 
-	//disable image dragging
-	//window.ondragstart = function() { return false; };
+    //disable image dragging
+    //window.ondragstart = function() { return false; };
 
 
     if (boardInitialized === false)
@@ -715,10 +715,10 @@ $(function() {
             changeThemeTo('bigcards');
         }
         /*else if (currentTheme == "nocards")
-		{
-			currentTheme = "bigcards";
-			$("link[title=cardsize]").attr("href", "css/bigcards.css");
-		}*/
+        {
+            currentTheme = "bigcards";
+            $("link[title=cardsize]").attr("href", "css/bigcards.css");
+        }*/
 
         sendAction('changeTheme', currentTheme);
 
@@ -753,12 +753,12 @@ $(function() {
 
 
     // $('#cog-button').click( function(){
-    // 	$('#config-dropdown').fadeToggle();
+    //     $('#config-dropdown').fadeToggle();
     // } );
 
     // $('#config-dropdown').hover(
-    // 	function(){ /*$('#config-dropdown').fadeIn()*/ },
-    // 	function(){ $('#config-dropdown').fadeOut() }
+    //     function(){ /*$('#config-dropdown').fadeIn()*/ },
+    //     function(){ $('#config-dropdown').fadeOut() }
     // );
     //
 

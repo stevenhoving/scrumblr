@@ -1,8 +1,8 @@
 /*exports.database = {
-	type: 'mongodb',
-	hostname: 'localhost',
-	port: 27017,
-	database: 'scrumblr'
+    type: 'mongodb',
+    hostname: 'localhost',
+    port: 27017,
+    database: 'scrumblr'
 };
 */
 
@@ -11,18 +11,13 @@ var argv = require('yargs')
         .argv;
 
 exports.server = {
-	port: argv.port || 8080,
-	baseurl: argv.baseurl || '/'
-};
-
-exports.googleanalytics = {
-	enabled: argv['gaEnabled'] || false,
-	account: argv['gaAccount'] || "UA-2069672-4"
+    port: argv.port || 8080,
+    baseurl: argv.baseurl || '/'
 };
 
 exports.database = {
-	type: 'redis',
-	prefix: '#scrumblr#',
+    type: 'redis',
+    prefix: '#scrumblr#',
     redis: argv.redis || 'redis://127.0.0.1:6379'
 };
 
