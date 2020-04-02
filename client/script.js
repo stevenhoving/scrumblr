@@ -6,7 +6,7 @@ var boardInitialized = false;
 var keyTrap = null;
 
 var baseurl = location.pathname.substring(0, location.pathname.lastIndexOf('/'));
-var socket = io.connect({ path: baseurl + '/ws' });
+var socket = io.connect({ path: baseurl + '/socket.io' });
 
 //an action has happened, send it to the
 //server

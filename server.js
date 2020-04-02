@@ -1,9 +1,8 @@
-'use strict';
-
 /**************
  SYSTEM INCLUDES
 **************/
 var http = require('http');
+//var sys = require('sys');
 var async = require('async');
 var sanitizer = require('sanitizer');
 var compression = require('compression');
@@ -42,7 +41,7 @@ console.log('Server running at http://127.0.0.1:' + conf.port + '/');
  SETUP Socket.IO
 **************/
 var io = require('socket.io')(server, {
-    path: conf.baseurl == '/' ? '' : conf.baseurl + '/ws'
+    path: conf.baseurl == '/' ? '' : conf.baseurl + '/socket.io'
 });
 
 /**************
